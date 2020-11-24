@@ -16,6 +16,7 @@ Todos:
 -}
 
 import XMonad
+import XMonad.Actions.CycleWS (toggleWS) -- Toggle to prev workspace
 import XMonad.Config.Desktop (desktopConfig) -- sane defaults
 import XMonad.Hooks.DynamicLog (statusBar, xmobarPP, xmobarColor, wrap, PP(..)) -- statusbar
 import XMonad.Util.EZConfig (additionalKeysP) -- emacs style keybindings
@@ -41,6 +42,7 @@ myKeys = [ ("M-v j",                   volDec)
          , ("M-s S-s",   spawn "maim -s -c 255,0,0 ~/Pictures/screenshots/screenshot-$(date +%Y-%m-%d-%H%M%S).png")
          , ("M-s M-s",   spawn "maim | xclip -selection clipboard -t image/png")
          , ("M-s M-S-s", spawn "maim -s -c 255,0,0 | xclip -selection clipboard -t image/png")
+         , ("M-<Tab>",   toggleWS)
          ]
 
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
