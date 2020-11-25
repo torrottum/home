@@ -49,7 +49,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myStartupHook = do
     spawnOnce "setxkbmap no &"
-    spawnOnce "feh --no-fehbg --bg-fill /home/tor/.config/lucie-capkova-ENovbLgx6M0-unsplash.jpg"
+    spawnOnce "feh --no-fehbg --bg-fill /home/tor/.config/lucie-capkova-ENovbLgx6M0-unsplash.png"
     spawnOnce "alacritty --class irc -t irc -e /home/tor/bin/irc"
 
 myConfig = desktopConfig 
