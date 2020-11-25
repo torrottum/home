@@ -1,0 +1,3 @@
+#!/bin/bash
+
+brightnessctl -d 'intel_backlight' -c 'backlight' "$@"
