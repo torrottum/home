@@ -1,0 +1,10 @@
+[user]
+    email = tor@torrottum.no
+    name = Tor Røttum
+    signingkey = 2293882D608FE100AEB2F81263BB470D20A8F312
+[commit]
+    gpgSign = true
+[format]
+    signOff = true
+[credential]
+    helper = "!git-cred-helper $@"
