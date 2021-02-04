@@ -1,12 +1,10 @@
 # TODO: Clean up
 
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 ### Added by Zinit's installer
-# TODO: fix this so zsh setup can be used temporarily on servers
 if [[ ! -f $HOME/.config/zsh/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$HOME/.config/zsh/.zinit" && command chmod g-rwX "$HOME/.config/zsh/.zinit"
@@ -43,7 +41,7 @@ compinit
 setopt autocd inc_append_history share_history
 bindkey -e
 
-alias ls='ls --color' # TODO: macos
+alias ls='ls --color'
 alias editzshrc='$EDITOR $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc'
 alias vim='nvim'
 alias mutt='neomutt'
@@ -52,6 +50,16 @@ compdef _git home
 
 [[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
+if hash fnm &> /dev/null; then
+    export PATH=/Users/tor/.fnm:$PATH
+    eval "`fnm env`"
+fi
+
+if [[ -f "$ZDOTDIR/.zshrc.private" ]]; then
+    source "$ZDOTDIR/.zshrc.private"
+fi
+
+# MacOS specific
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias ls="ls -G"
+fi
