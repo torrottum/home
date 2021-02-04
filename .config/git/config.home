@@ -1,0 +1,3 @@
+# vi: ft=gitconfig
+[core]
+    excludesfile = ~/.config/git/ignore.home
