@@ -22,3 +22,5 @@
     path = ~/code/vimond/.gitconfig
 [includeIf "gitdir:~/.config/home.git"]
     path = ~/.config/git/config.home
+[pull]
+    rebase = true
