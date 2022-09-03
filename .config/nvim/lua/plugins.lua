@@ -37,12 +37,27 @@ return require('packer').startup(function()
 
     use { 'antoinemadec/FixCursorHold.nvim', setup = [[vim.g.cursorhold_updatetime = 100]]}
     use {
-      'nvim-telescope/telescope.nvim', branch = '0.1.x',
-      requires = {
-          'nvim-lua/plenary.nvim',
-          {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-      },
-      config = [[require('config.telescope')]]
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+        },
+        config = [[require('config.telescope')]]
+    }
+    use {
+        'folke/which-key.nvim',
+        config = [[require('which-key').setup()]]
+    }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+        config = [[require('config.treesitter')]]
+    }
+    -- colorscheme
+    use {
+        'Lokaltog/monotone.nvim',
+        requires = {'rktjmp/lush.nvim'},
+        config = [[require 'config.colorscheme']]
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
