@@ -42,9 +42,3 @@ require('lspconfig').tsserver.setup(config())
 require('lspconfig').terraformls.setup(config())
 require('lspconfig').ccls.setup(config())
 require('lspconfig').pyright.setup(config())
-
--- TODO: move this somewhere else
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
-    pattern = {"*.tf", "*.tfvars"},
-    callback = function() vim.lsp.buf.format() end
-})
