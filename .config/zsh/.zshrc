@@ -33,7 +33,7 @@ zinit snippet OMZL::completion.zsh
 autoload -U compinit && compinit
 
 # Aliases {{{
-alias home='git --git-dir=$HOME/.homerepo --work-tree=$HOME'
+alias home='git --git-dir=$HOME/.home.git --work-tree=$HOME'
 alias cdgr='cd-gitroot'
 alias vim='nvim'
 alias editzshrc='$EDITOR $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc'
