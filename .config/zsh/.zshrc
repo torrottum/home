@@ -34,6 +34,8 @@ autoload -U compinit && compinit
 
 # Aliases {{{
 alias home='git --git-dir=$HOME/.home.git --work-tree=$HOME'
+alias .nvim='GIT_DIR=$HOME/.home.git GIT_WORK_TREE=$HOME nvim'
+alias h='home'
 alias cdgr='cd-gitroot'
 alias vim='nvim'
 alias source-zshrc='source $ZDOTDIR/.zshrc'
