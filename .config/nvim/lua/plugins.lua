@@ -60,6 +60,11 @@ return require('packer').startup(function()
         config = [[require 'config.colorscheme']]
     }
 
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = [[require('config.gitsigns')]]
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
