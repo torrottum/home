@@ -36,7 +36,8 @@ autoload -U compinit && compinit
 alias home='git --git-dir=$HOME/.home.git --work-tree=$HOME'
 alias cdgr='cd-gitroot'
 alias vim='nvim'
-alias editzshrc='$EDITOR $ZDOTDIR/.zshrc && source $ZDOTDIR/.zshrc'
+alias source-zshrc='source $ZDOTDIR/.zshrc'
+alias edit-zshrc='$EDITOR $ZDOTDIR/.zshrc && source-zshrc'
 #}}}
 
 
