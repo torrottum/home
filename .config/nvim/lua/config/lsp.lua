@@ -1,41 +1,47 @@
-local on_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+local config = function()
+    -- TODO: move to utility file?
+    local map = function(mode, lhs, rhs, buffer, desc)
+        local bufopts = { noremap=true, silent=true, buffer=buffer, desc=desc }
+        vim.keymap.set(mode, lhs, rhs, bufopts)
+    end
 
-    -- Mappings.
-    -- TODO: check docs
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    local on_attach = function(client, bufnr)
+        -- Enable completion triggered by <c-x><c-o>
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set('n', '<space>wl', function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, bufopts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+        -- Mappings.
+        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+        map('n', 'gD', vim.lsp.buf.declaration, bufnr, 'Jump to declaration')
+        map('n', 'gd', vim.lsp.buf.definition, bufnr, 'Jump to definition')
+
+        map('n', 'K', vim.lsp.buf.hover, bufnr, 'LSP Hover')
+        map('n', 'gi', vim.lsp.buf.implementation, bufnr, 'Jump to implementation')
+        map('n', '<C-k>', vim.lsp.buf.signature_help, bufnr, 'View signature help')
+        map('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufnr, 'Add workspace folder')
+        map('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufnr, 'Remove workspace folder')
+        map('n', '<space>wl', function()
+            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end, bufnr, 'List workspace folders')
+        map('n', '<space>D', vim.lsp.buf.type_definition, bufnr, 'Jump to type definition')
+        map('n', '<space>rn', vim.lsp.buf.rename, bufnr, 'LSP Rename')
+        map('n', '<space>ca', vim.lsp.buf.code_action, bufnr, 'LSP Code action')
+        map('n', 'gr', vim.lsp.buf.references, bufnr, 'View references')
+        map('n', '<space>F', vim.lsp.buf.formatting, bufnr, 'Format code')
+    end
+
+    -- Setup lspconfig.
+    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    return {
+        capabilities = capabilities,
+        on_attach = on_attach,
+    }
 end
 
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require('lspconfig')['tsserver'].setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
-
-require('lspconfig')['terraformls'].setup{
-    capabilities = capabilities,
-    on_attach = on_attach
-}
+require('lspconfig').tsserver.setup(config())
+require('lspconfig').terraformls.setup(config())
+require('lspconfig').ccls.setup(config())
+require('lspconfig').pyright.setup(config())
 
 -- TODO: move this somewhere else
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
