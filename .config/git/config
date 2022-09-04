@@ -20,5 +20,5 @@
     rebase = true
 [core]
     excludesfile = ~/.config/git/ignore
-[includeIf "gitdir:~/.config/home.git"]
+[includeIf "gitdir:~/.home.git"]
     path = ~/.config/git/config.home

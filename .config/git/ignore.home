@@ -1,1 +1,7 @@
 .home.git
+*
+.*
+.config/*
+!.config
+!.config/git
+!.config/zsh
