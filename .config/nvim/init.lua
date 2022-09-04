@@ -1,7 +1,7 @@
 local fn = vim.fn
 local opt = vim.opt
 
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 opt.number = true
 opt.relativenumber = true
