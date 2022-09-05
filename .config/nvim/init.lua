@@ -24,6 +24,8 @@ opt.completeopt = 'menu,menuone,noselect'
 opt.list = true
 opt.listchars = 'tab:!·,trail:·,nbsp:!'
 
-vim.opt.termguicolors = true
+opt.termguicolors = true
+
+vim.g.loaded_netrwPlugin = true
 
 require('plugins')

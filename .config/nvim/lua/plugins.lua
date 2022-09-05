@@ -67,6 +67,14 @@ return require('packer').startup(function()
         requires = 'nvim-lua/plenary.nvim',
         config = [[require('config.neogit')]],
     }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+        },
+        tag = 'nightly',
+        config = [[require('nvim-tree').setup()]]
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
