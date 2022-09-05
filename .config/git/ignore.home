@@ -3,6 +3,6 @@
 .*
 .config/*
 !.config
-!.config/git
-!.config/git/*
+!.config/git**
 !.config/zsh
+!.config/nvim**
