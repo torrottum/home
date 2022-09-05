@@ -62,6 +62,11 @@ return require('packer').startup(function()
         'lewis6991/gitsigns.nvim',
         config = [[require('config.gitsigns')]]
     }
+    use {
+        'TimUntersberger/neogit',
+        requires = 'nvim-lua/plenary.nvim',
+        config = [[require('config.neogit')]],
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
