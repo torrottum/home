@@ -34,7 +34,6 @@ return require('packer').startup(function()
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = [[require('lualine').setup()]]
     }
-
     use { 'antoinemadec/FixCursorHold.nvim', setup = [[vim.g.cursorhold_updatetime = 100]]}
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
@@ -59,7 +58,6 @@ return require('packer').startup(function()
         requires = 'rktjmp/lush.nvim',
         config = [[require('config.colorscheme')]]
     }
-
     use {
         'lewis6991/gitsigns.nvim',
         config = [[require('config.gitsigns')]]
