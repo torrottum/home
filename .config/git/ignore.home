@@ -1,9 +1,12 @@
 .home.git
 *
 .*
+!.zshenv
 .config/*
 !.config
 !.config/git**
-!.config/zsh
+!.config/zsh**
+.zcompdump
+.zsh_history
 !.config/nvim**
 !.config/kitty**
