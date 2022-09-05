@@ -55,9 +55,9 @@ return require('packer').startup(function()
     }
     -- colorscheme
     use {
-        'Lokaltog/monotone.nvim',
-        requires = {'rktjmp/lush.nvim'},
-        config = [[require 'config.colorscheme']]
+        'mcchrish/zenbones.nvim',
+        requires = 'rktjmp/lush.nvim',
+        config = [[require('config.colorscheme')]]
     }
 
     use {
