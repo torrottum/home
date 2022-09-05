@@ -6,3 +6,4 @@
 !.config/git**
 !.config/zsh
 !.config/nvim**
+!.config/kitty**
