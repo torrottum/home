@@ -6,6 +6,7 @@
 !.config
 !.config/git**
 !.config/zsh**
+.config/zsh/.private.zsh
 .zcompdump
 .zsh_history
 !.config/nvim**

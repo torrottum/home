@@ -44,6 +44,9 @@ alias edit-zshrc='$EDITOR $ZDOTDIR/.zshrc && source-zshrc'
 
 
 [[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
+[[ -f "$ZDOTDIR/.private.zsh" ]] && source "$ZDOTDIR/.private.zsh"
 [[ "$OSTYPE" == "darwin"* ]] && source "$ZDOTDIR/.macos"
+
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 # vim: set foldmethod=marker:
