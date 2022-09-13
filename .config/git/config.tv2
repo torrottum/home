@@ -1,0 +1,4 @@
+[user]
+    email = tor.rottum@tv2.no
+[commit]
+    gpgSign = false

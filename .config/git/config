@@ -22,3 +22,5 @@
     excludesfile = ~/.config/git/ignore
 [includeIf "gitdir:~/.home.git"]
     path = ~/.config/git/config.home
+[includeIf "gitdir:~/code/TV2/"]
+    path = ~/.config/git/config.tv2
