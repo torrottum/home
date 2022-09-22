@@ -40,6 +40,7 @@ alias cdgr='cd-gitroot'
 alias vim='nvim'
 alias source-zshrc='source $ZDOTDIR/.zshrc'
 alias edit-zshrc='$EDITOR $ZDOTDIR/.zshrc && source-zshrc'
+alias jwtdec="jq -R 'gsub(\"-\";\"+\") | gsub(\"_\";\"/\") | split(\".\") | .[1] | @base64d | fromjson'"
 #}}}
 
 
