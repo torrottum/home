@@ -1,2 +1,2 @@
-vim.g.zenbones_darkness = 'stark'
-vim.cmd('colorscheme zenbones')
+require("gruvbox").setup()
+vim.cmd("colorscheme gruvbox")

@@ -52,10 +52,8 @@ return require('packer').startup(function()
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
         config = [[require('config.treesitter')]]
     }
-    -- colorscheme
     use {
-        'mcchrish/zenbones.nvim',
-        requires = 'rktjmp/lush.nvim',
+        'ellisonleao/gruvbox.nvim',
         config = [[require('config.colorscheme')]]
     }
     use {
