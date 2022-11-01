@@ -41,13 +41,15 @@ alias vim='nvim'
 alias source-zshrc='source $ZDOTDIR/.zshrc'
 alias edit-zshrc='$EDITOR $ZDOTDIR/.zshrc && source-zshrc'
 alias jwtdec="jq -R 'gsub(\"-\";\"+\") | gsub(\"_\";\"/\") | split(\".\") | .[1] | @base64d | fromjson'"
+alias ls='ls --color'
+alias ..='cd ..'
+alias ...='cd ../..'
 #}}}
 
 
 [[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 [[ -f "$ZDOTDIR/.private.zsh" ]] && source "$ZDOTDIR/.private.zsh"
 [[ "$OSTYPE" == "darwin"* ]] && source "$ZDOTDIR/.macos"
-
-. /usr/local/opt/asdf/libexec/asdf.sh
+[[ -f "/opt/asdf-vm/asdf.sh" ]] && source /opt/asdf-vm/asdf.sh
 
 # vim: set foldmethod=marker:

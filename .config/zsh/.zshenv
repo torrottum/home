@@ -1,2 +1,2 @@
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.pulumi/bin:$PATH"
 export EDITOR="nvim"
