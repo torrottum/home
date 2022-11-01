@@ -6,6 +6,7 @@ vim.g.mapleader = " "
 opt.number = true
 opt.relativenumber = true
 
+opt.colorcolumn = { 80, 120 }
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.softtabstop = 4
