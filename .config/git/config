@@ -16,6 +16,8 @@
     c = commit
     ca  = commit --amend
     lo = log --decorate --oneline
+	d = diff
+	ds = diff --staged
 [pull]
     rebase = true
 [core]
