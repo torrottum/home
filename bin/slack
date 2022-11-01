@@ -1,6 +1,0 @@
-#!/bin/bash
-if [[ -n "${WAYLAND_DISPLAY}" ]]; then
-    exec /usr/bin/slack --ozone-platform-hint=auto $@
-else
-    exec /usr/bin/slack $@
-fi
