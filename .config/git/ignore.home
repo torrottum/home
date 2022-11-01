@@ -12,3 +12,5 @@
 !.config/nvim**
 .config/nvim/plugin/packer_compiled.lua
 !.config/kitty**
+!bin
+!bin/*
