@@ -44,6 +44,7 @@ alias jwtdec="jq -R 'gsub(\"-\";\"+\") | gsub(\"_\";\"/\") | split(\".\") | .[1]
 alias ls='ls --color'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias startx='startx $XINITRC'
 #}}}
 
 

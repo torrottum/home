@@ -14,3 +14,7 @@
 !.config/kitty**
 !bin
 !bin/*
+!.config/X11
+!.config/X11/*
+!.config/i3
+!.config/i3/*
