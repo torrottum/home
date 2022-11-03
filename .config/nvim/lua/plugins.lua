@@ -8,7 +8,6 @@ end
 return require('packer').startup(function()
     -- Manage packer with packager
     use 'wbthomason/packer.nvim'
-    use 'hashivim/vim-terraform'
     use { 'numToStr/Comment.nvim', config = [[require('Comment').setup()]] }
     use { 'neovim/nvim-lspconfig', config = [[require('config.lsp')]] }
     use {
