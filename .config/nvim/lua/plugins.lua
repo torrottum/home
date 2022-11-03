@@ -73,6 +73,12 @@ return require('packer').startup(function()
         config = [[require('nvim-tree').setup()]]
     }
     use { 'sbdchd/neoformat' }
+    use {
+        "rcarriga/nvim-dap-ui",
+        requires = {"mfussenegger/nvim-dap"},
+        config = [[require('config.dap')]]
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
