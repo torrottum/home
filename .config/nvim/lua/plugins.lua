@@ -30,7 +30,7 @@ return require('packer').startup(function()
     }
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = [[require('lualine').setup()]]
     }
     use { 'antoinemadec/FixCursorHold.nvim', setup = [[vim.g.cursorhold_updatetime = 100]]}
@@ -65,9 +65,9 @@ return require('packer').startup(function()
         config = [[require('config.neogit')]],
     }
     use {
-        'kyazdani42/nvim-tree.lua',
+        'nvim-tree/nvim-tree.lua',
         requires = {
-            'kyazdani42/nvim-web-devicons',
+            'nvim-tree/nvim-web-devicons',
         },
         tag = 'nightly',
         config = [[require('nvim-tree').setup()]]
