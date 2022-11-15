@@ -30,3 +30,4 @@ opt.termguicolors = true
 vim.g.loaded_netrwPlugin = true
 
 require('plugins')
+require('config.mapping').setup()
