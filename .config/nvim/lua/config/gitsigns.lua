@@ -6,6 +6,6 @@ require("gitsigns").setup({
         },
     },
     on_attach = function(bufnr)
-        require('config.mapping').setup_lsp(bufnr)
+        require('config.mapping').setup_gitsigns(bufnr)
     end
 })
