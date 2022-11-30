@@ -32,6 +32,8 @@ M.setup = function()
     vim.keymap.set("n", "<leader>gl", ":Telescope git_commits<CR>", add_desc(opts, "Git commits"))
     vim.keymap.set("n", "<leader>gL", ":Telescope git_bcommits<CR>", add_desc(opts, "Git branch commits"))
 
+    vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", add_desc(opts, "Toggle NvimTree"))
+
     vim.keymap.set("n", "<leader>F", ":Neoformat<CR>", add_desc(opts, "Run neoformat on buffer"))
 end
 
