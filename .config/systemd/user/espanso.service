@@ -1,0 +1,14 @@
+# TODO: implement something like this: 
+# https://superuser.com/a/1128905
+# Currently espanso keeps crashing before starting X
+[Unit]
+Description=espanso
+
+[Service]
+ExecStart=/usr/bin/espanso launcher 
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=default.target
+

@@ -1,0 +1,12 @@
+matches:
+  - trigger: ";hk"
+    replace: "God morgen! Jeg har hjemmekontor i dag :black_cat:"
+  - trigger: ";sernå"
+    replace: "Jeg skal ta en titt på det nå"
+  - trigger: ";sesenere"
+    replace: >
+      Er det greit at jeg ser på det litt senere? Er litt opptatt
+  - trigger: ";semorgen"
+    replace: >
+      Er det greit at jeg ser på det i morgen? Jeg er litt opptatt resten av
+      dagen

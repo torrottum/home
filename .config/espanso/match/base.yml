@@ -1,0 +1,45 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ":now"
+    label: "Current date and time, for example 2022-11-23 18:49"
+    replace: "{{now}}"
+    vars:
+      - name: now
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M:%S"
+
+  - trigger: ":now"
+    label: "Current date and time in ISO8601 UTC, for example 2022-11-23T18:02:49+00:00"
+    replace: "{{now}}"
+    vars:
+      - name: now
+        type: shell
+        params:
+          cmd: "date -u -Iseconds"
+
+  - trigger: ":now"
+    label: "Time in seconds since unix epoch, for example 1669226584"
+    replace: "{{now}}"
+    vars:
+      - name: now
+        type: date
+        params:
+          format: "%s"
+

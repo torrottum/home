@@ -18,3 +18,7 @@
 !.config/X11/*
 !.config/i3
 !.config/i3/*
+!.config/espanso
+!.config/espanso/**
+!.config/systemd
+!.config/systemd/**
