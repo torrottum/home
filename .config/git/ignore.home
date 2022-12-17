@@ -22,3 +22,7 @@
 !.config/espanso/**
 !.config/systemd
 !.config/systemd/**
+!.config/xmonad
+!.config/xmonad/**
+!.config/xmobar
+!.config/xmobar/**

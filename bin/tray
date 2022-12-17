@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DPI=$(xrdb -get 'Xft.dpi')
+HEIGHT=$(($DPI/96*18))
+
+trayer --edge top --align right --SetDockType true --SetPartialStrut false \
+     --expand true --widthtype request --height "$HEIGHT" \
+     --transparent true --alpha 0 --tint 0x222222 \
+     --monitor "primary"
