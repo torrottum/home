@@ -32,8 +32,11 @@ zinit snippet OMZL::completion.zsh
 # }}}
 
 # Autocompletion
-autoload -Uz compinit
-compinit
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+if hash aws_completer 2> /dev/null; then
+    complete -C "$(which aws_completer)" aws
+fi
 
 # Aliases {{{
 alias home='git --git-dir=$HOME/.home.git --work-tree=$HOME'
@@ -58,8 +61,9 @@ alias edit-xmonad='cd $HOME/.config/xmonad && .nvim xmonad.hs'
 [[ -f "$ZDOTDIR/.private.zsh" ]] && source "$ZDOTDIR/.private.zsh"
 [[ "$OSTYPE" == "darwin"* ]] && source "$ZDOTDIR/.macos"
 [[ -f "/opt/asdf-vm/asdf.sh" ]] && source /opt/asdf-vm/asdf.sh
- # ghcup-env TODO: move to XDG spec
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -f "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env"
+[[ -f "/usr/share/nvm/init-nvm.sh" ]] && source "/usr/share/nvm/init-nvm.sh"
 
 # Set alacritty title {{{
 if [[ "${TERM:-}" == "alacritty" ]]; then
@@ -72,3 +76,10 @@ if [[ "${TERM:-}" == "alacritty" ]]; then
 fi
 ##}}}
 
+# pnpm
+export PNPM_HOME="/home/tor/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -31,7 +31,9 @@
 .config/xmonad/*.hi
 .config/xmonad/*.o
 .config/xmonad/.stack-work
+!.config/zsh
 !.config/zsh/**
+.config/zsh/.zcompdump
 .config/zsh/.private.zsh
 .home.git
 !.zshenv
