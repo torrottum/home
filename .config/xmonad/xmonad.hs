@@ -162,8 +162,8 @@ scratchpads =
 
 myWorkspaces :: [String]
 myWorkspaces =
-  ["1:web", "2:dev"]
-    ++ map (show :: Int -> String) [3 .. 7]
+  ["1:web", "2:dev", "3:dev"]
+    ++ map (show :: Int -> String) [4 .. 7]
     ++ ["8:media", "9:chat"]
     ++ otherWorkspaces
 
@@ -232,7 +232,7 @@ myXmobarPP =
 
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce "xrandr --output DP-4 --scale 1.5"
+  spawnOnce "xrandr --output eDP1 --scale 1.5"
   spawnOnce "feh --no-fehbg --bg-fill .config/wallpaper"
   spawnOnce "xsetroot -cursor_name arrow"
   spawnOnce "~/bin/tray"

@@ -20,14 +20,13 @@ config :: Config
 config =
   defaultConfig
     { overrideRedirect = False,
-      font = "Iosevka Nerd Font 12",
-      additionalFonts = ["Iosevka Nerd Font Heavy 12"],
+      font = "Iosevka Term SS14 14",
       bgColor = "#282828",
       fgColor = "#ebdbb2",
       position = TopSize L 100 (scaleWithDpi 20),
       commands =
         [ Run XMonadLog,
-          Run $ Wireless "wlp9s0" ["-t", "<ssid>"] 10,
+          Run $ Wireless "wlan0" ["-t", "<ssid>"] 10,
           Run $
             Battery
               [ "-t",
@@ -51,7 +50,6 @@ config =
               50,
           Run $ Date "%a %d %b <fn=1>%H:%M:%S</fn>" "date" 10,
           Run $ Com "/home/tor/.config/xmobar/icon-padding.sh" ["panel"] "tpad" 10,
-          Run $ Mpris2 "spotifyd" ["-t", "<title> - <artist> (<album>)", "-M", "25", "-e", "..."] 50,
           Run $ Memory ["-t", "<used>/<total>G", "--", "--scale", "1000"] 20,
           Run $ DiskU [("/", "<used>/<size>")] [] 300,
           Run $ MultiCpu [] 50,
@@ -75,14 +73,12 @@ config =
                 "--maxtemp",
                 "100"
               ]
-              50
-              -- Run $ CoreTemp ["-t", "Temp:<core0>|<core1><core2><core3>C",
-              --       "-L", "40", "-H", "60",
-              --       "-l", "lightblue", "-n", "gray90", "-h", "red"] 50
+              50,
+          Run $ Alsa "default" "Master" []
         ],
       alignSep = "}{",
-      template = "%XMonadLog% }{ <fn=1>Music:</fn> %mpris2% | %multicpu% "
-    ++ "%multicoretemp% | <fn=1>Mem:</fn> %memory% | <fn=1>Disk:</fn> %disku% | <fn=1>Wifi:</fn> %wlp9s0wi% | %battery% | %date% %tpad%",
+      template = "%XMonadLog% }{ %multicpu% "
+    ++ "%multicoretemp% | <fn=1>Mem:</fn> %memory% | <fn=1>Disk:</fn> %disku% | <fn=1>Wifi:</fn> %wlan0wi% | %battery% | %alsa:default:Master% | %date% %tpad%",
       dpi = fromIntegral getDpi
     }
 

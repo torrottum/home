@@ -21,8 +21,16 @@
 !.config/X11/**
 !.config/xmobar
 !.config/xmobar/**
+.config/xmobar/*.hi
+.config/xmobar/*.o
+.config/xmobar/.stack-work
+.config/xmobar/xmobar
+.config/xmobar/xmonad
 !.config/xmonad
 !.config/xmonad/**
+.config/xmonad/*.hi
+.config/xmonad/*.o
+.config/xmonad/.stack-work
 !.config/zsh/**
 .config/zsh/.private.zsh
 .home.git

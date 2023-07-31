@@ -50,6 +50,7 @@ flags:
     with_datezone: true
     with_xpm: true
     with_mpris: true
+    with_alsa: true
 
 # Extra package databases containing global packages
 # extra-package-dbs: []
