@@ -1,10 +1,8 @@
-local mapping = require('config.mapping')
-
 local config = function()
     local on_attach = function(client, bufnr)
         -- Enable completion triggered by <c-x><c-o>
         vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-        require('config.mapping').setup_lsp(bufnr)
+        require('keymap').setup_lsp(bufnr)
     end
 
     -- Setup lspconfig.
@@ -16,7 +14,6 @@ local config = function()
 end
 
 require('lspconfig').tsserver.setup(config())
-require('lspconfig').terraformls.setup(config())
 require('lspconfig').ccls.setup(config())
 require('lspconfig').pyright.setup(config())
 require('lspconfig').hls.setup(config())

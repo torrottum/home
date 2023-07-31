@@ -9,7 +9,7 @@ return require('packer').startup(function()
     -- Manage packer with packager
     use 'wbthomason/packer.nvim'
     use { 'numToStr/Comment.nvim', config = [[require('Comment').setup()]] }
-    use { 'neovim/nvim-lspconfig', config = [[require('config.lsp')]] }
+    use { 'neovim/nvim-lspconfig' }
     use {
         'L3MON4D3/LuaSnip',
         requires = {
@@ -25,7 +25,6 @@ return require('packer').startup(function()
             'hrsh7th/cmp-cmdline',
             'saadparwaiz1/cmp_luasnip'
         },
-        config = [[require('config.cmp')]],
         after='LuaSnip'
     }
     use {
@@ -40,7 +39,6 @@ return require('packer').startup(function()
             'nvim-lua/plenary.nvim',
             {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
         },
-        config = [[require('config.telescope')]]
     }
     use {
         'folke/which-key.nvim',
@@ -49,20 +47,16 @@ return require('packer').startup(function()
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-        config = [[require('config.treesitter')]]
     }
     use {
         'ellisonleao/gruvbox.nvim',
-        config = [[require('config.colorscheme')]]
     }
     use {
         'lewis6991/gitsigns.nvim',
-        config = [[require('config.gitsigns')]]
     }
     use {
-        'TimUntersberger/neogit',
+        'NeogitOrg/neogit',
         requires = 'nvim-lua/plenary.nvim',
-        config = [[require('config.neogit')]],
     }
     use {
         'nvim-tree/nvim-tree.lua',
@@ -70,15 +64,13 @@ return require('packer').startup(function()
             'nvim-tree/nvim-web-devicons',
         },
         tag = 'nightly',
-        config = [[require('nvim-tree').setup()]]
     }
     use { 'sbdchd/neoformat' }
     use {
         "rcarriga/nvim-dap-ui",
         requires = {"mfussenegger/nvim-dap"},
-        config = [[require('config.dap')]]
     }
-
+    use {'github/copilot.vim'}
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

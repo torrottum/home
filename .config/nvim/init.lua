@@ -27,7 +27,5 @@ opt.listchars = 'tab:!·,trail:·,nbsp:!'
 
 opt.termguicolors = true
 
-vim.g.loaded_netrwPlugin = true
-
 require('plugins')
-require('config.mapping').setup()
+require('keymap').setup()
