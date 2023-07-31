@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DPI=$(xrdb -get 'Xft.dpi')
-HEIGHT=$(($DPI/96*18))
+dpi=$(xrdb -get 'Xft.dpi')
+height=$(($height/96*20))
 
 trayer --edge top --align right --SetDockType true --SetPartialStrut false \
-     --expand true --widthtype request --height "$HEIGHT" \
+     --expand true --widthtype request --height "$height" \
      --transparent true --alpha 0 --tint 0x222222 \
      --monitor "primary"
