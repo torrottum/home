@@ -1,5 +1,5 @@
 #!/bin/sh
-XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 userresources=$XDG_CONFIG_HOME/X11/Xresources
 usermodmap=$XDG_CONFIG_HOME/X11/Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -31,7 +31,6 @@ fi
 # Auto scale QT based on screen DPI
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
-setxkbmap no nodeadkeys &
 xsetroot -cursor_name arrow &
 
 exec ${WM:-xmonad}
